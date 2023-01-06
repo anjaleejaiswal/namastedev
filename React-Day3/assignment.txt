@@ -1,0 +1,16 @@
+1. What is JSX?
+It is React extension which allows writing javascript code that looks like HTML.
+
+Ex-
+function HeaderComponent() => {
+    return (
+        <div>
+            <h1>Namate React</h1>
+        </div>
+    )
+}
+
+2. Superpowers of JSX?
+a. It prevents injection attacks XSS(cross-site-scripting). Hence, it is very secure.
+b. JSX can easily convert HTML tags to react elements. It is faster than regular JavaScript.
+

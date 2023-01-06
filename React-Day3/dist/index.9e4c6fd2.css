@@ -1,0 +1,28 @@
+.headerClss {
+  height: 71px;
+  background-color: #8a2be2;
+  margin-top: -9px;
+  margin-left: -2px;
+}
+
+.logo-img {
+  height: 67px;
+  width: 98px;
+  margin-top: 2px;
+  margin-left: 1px;
+}
+
+.profile-img {
+  float: right;
+}
+
+.SearchCls {
+  margin-top: 22px;
+}
+
+.FindCls {
+  width: 55px;
+  position: absolute;
+}
+
+/*# sourceMappingURL=index.9e4c6fd2.css.map */
