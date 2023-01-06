@@ -1,0 +1,73 @@
+What is `NPM`?
+NPM is a package manager. It is used to install packeges.
+React app is powered by the lots of thing by lots of different packages which in turn provide 
+more power to our application.
+It boast the perfomance of application.
+
+What is `Parcel/Webpack`? Why do we need it?
+It is a bundler which has different packages into it.
+We need it to make our development code ready for production.
+These bundlers helps in
+    a. HMR(Hot Module Replacement)
+    b.Image optimization
+    c.Minifying
+    d.Caching while development
+    e.Cleaning our code
+    d.Compression
+    f.Compatible with older version of browser
+    g.Bundling etc.
+
+What is `.parcel-cache`
+Parcel-cache is a location where parcel store all the previous build information.
+This helps parcel to retrieve previous build infomation and which in turn reduce the build duration.
+
+What is `npx` ?
+npx is a tool which is used to excecute packages.
+
+What is difference between `dependencies` vs `devDependencies`
+In package.json dependencies module is used during development and production 
+but devDependencies module is only used during development phase.
+
+- What is Tree Shaking?
+It is used to remove unwanted code.
+By bundling multiple file into single it removes the unwanted code which is important for production ready.
+
+- What is Hot Module Replacement?
+when you make any changes in the code parcel automatically update the code in browser,no page reloading is necessary.
+
+List down your favourite 5 superpowers of Parcel and describe any 3 of them in your own words.
+1. HMR(hot Module Replacement)- when you make any changes in the code parcel automatically update the code in browser,
+                                no page reloading is necessary.
+2. Image optimization
+3. Caching
+4. Minifying - it minimize the size of code by removing extra spaces and unwanted jargons.
+                it reduces the file size too much extent so the app will be light weighted.
+5.Tree Shaking - it remove unwanted code. 
+
+- What is `.gitignore`? What should we add and not add into it?
+gitignore is the git file that is used as a refrence to while we push our code to git basically it ignore the filename 
+present under this would be ignored while we push our code to git server.
+
+we should add - dist, parcel-cache
+we shouldn't add - package-lock.json
+
+- Why should I not modify `package-lock.json`?
+because it contains the exact version of each dependencies.
+
+-- What is `node_modules` ? Is it a good idea to push that on git?
+It is the database of npm. 
+No, its not a good idea to push that on git. It ia very heavy weight object. 
+We can easily generate the node-modules with the infomation from package.json and package-lock.json.
+
+
+- What is the `dist` folder?
+dist folder is a place where developed code are converted to optimized and production ready.
+dist folder is used when production build of application is done.
+
+- What is `browserlists`
+browserlists is a tool which makes our application compatible in older browser.
+
+we can add it in package.json file
+"browserlists" : "last 2 major versions"
+
+
