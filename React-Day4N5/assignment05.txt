@@ -1,0 +1,52 @@
+1. What is the difference between Named Export, Default export and * export?
+Named Export - 
+export without default tag is Named Export. A module can have multiple named exports.
+which are simply variables or functions that are marked for export with export keyword.
+
+export const NameOfComponent = () => {console.log("Hello")};
+export const variableName = "Hello1"
+
+want to import named component: 
+
+import {NameOfComponent} from "./Component.js";
+
+* exports - 
+alternatively we can also use import keyword with the * symbol to import all named exports from
+a module into a single object and then access the named exports using the corresping names.
+
+import * as Obj from "./Component.js";
+
+console.log(Obj.NameOfComponent); //Hello
+console.log(Obj.variableName); //Hello1
+
+Default Export -
+export with default tag is Default Export.A Module can have only one default export. 
+
+const DefaultComponent = () => {};
+export default DefaultComponent;
+
+while importing default component:
+import DefaultComponent from "./DefaultComponent.js"
+
+2. What is the importance of config.js file?
+Config.js file contains a list of initial parameters and settings of your project you
+need to get started.
+
+It could be anything like a connection of string to the URL in development environment,
+language settings, user settings etc.
+
+All the hardcoded values we can put in config file.
+
+3. What are React Hooks?
+Reacts hooks are kind of normal functions.
+Hook is a special function that lets you “hook into” React features
+
+4. Why do we need a useState Hook?
+useState hooks is a state variable.
+ It returns a pair of values: the current state and a function that updates it.
+
+ useState hooks used when the state is change. 
+
+
+
+
