@@ -1,0 +1,69 @@
+1. What are the various ways to add images into our app? Explain with code examples.
+- a. using <img> tag : we can add an image to app by using an <img> tag, and specifying the source of
+image using the src attribute.
+
+import React from "react";
+
+const App = () => {
+    return (
+        <>
+            <img src="image.jpg" />
+        </>
+    )
+}
+
+export default App;
+
+ b. Using css background image
+    We can add an image as a background to a React component by using CSS styles.
+    
+    import React from "react";
+
+    const App = () => {
+        return (
+            <>
+                <div style={{backgroundImage : 'url(image.jpg)'}} />
+            </>
+        )
+    }
+
+    export default App;
+
+    c. Importing image as an modules
+
+     import React from "react";
+     import Image from "./constant";
+
+     const App = () => {
+        return (
+            <>
+                <img src={Image} />
+            </>
+        )
+     } 
+
+     export default App;
+
+2. What would happen if we use console.log(useState())?
+- it will return an array of length 2. 
+    [undefined, function]
+first will be default value passed with useState as an argument and second will be function.
+
+3. How will useEffect behave if we don't add a dependency array?
+- It will trigger after every render
+
+useEffect(()=> {
+    console.log("useEffect")
+});
+
+4. What is SPA?
+- SPA stands for single page application. It is a implementation of web application that loads a single
+web document. It allows user to route the page without reloading the whole page.
+
+5. Difference between client side routing and server side routing?
+- server side routing keeps making request to the server in order for the apllication to rerender.
+
+client side routing does not need to keep making request to the server, it does it once when the application
+is being loaded into the browser any other navigation or page change is just being rendered from the 
+already saved application.
+

@@ -1,0 +1,107 @@
+1. How do you create Nested routes react-router-dom configuration?
+- using children of children
+
+const AppRouter = createBrowserRouter([
+    {
+        path : "/",
+        element : <Body/>
+    },
+    {
+        path : "/about",
+        element : <About />,
+        children : [
+            {
+                path : "info",
+                element : <Info />
+            }
+        ]
+    }
+])
+
+2. Read about createHashRouter,  createMemoryRouter from react router docs.
+- createHashRouter is useful if we are unable to configure your web server to direct all traffic to react router application.
+Insead of using normal urls, it will use the hash(#) portion of the url to manage the application url.
+
+
+const router = createHashRouter([
+    {
+        path :  "/",
+        element : <App />,
+        children : [{
+            path : "team",
+            element : <Team />
+        }]
+    }
+])
+
+createMemoryRouter : it is primarily useful for testing and component development tools like storybook.
+Instead of managing browser history it manages its own history stacks in memory.
+
+2. What is the order lifecycle method calls in class based component?
+- a. Mounting
+    -constructor()
+    -render()
+    -componentDidMount()
+
+  b. Updating
+    -render()
+    -componentDidUpdate()
+
+  c. Unmounting
+    -componentWillUnmount
+
+3. Why do we use componentDidMount ? 
+- In class based component we handle side effects using componentDidMount method.
+For example : we need call api in class based component then we will call it in componentDidMount.
+Which will render after render() method.
+
+componentDidMount(){
+    //api call
+}
+
+4. Why do we use componentWillUnmount? Show with example
+- In class based component, componentWillUnmount will be called when are leaving the page and 
+moving to another page.
+
+So in componentWillUnmount we will remove the eventlistener if we have used in that component.
+
+import React from "react"
+
+class About extends React.Component{
+     constructor(){
+        super(props);
+    }
+
+    componentDidMount(){
+        this.timer = setInterval(()=> {
+            console.log("componentDidMount");
+        },1000)
+    }
+
+    componentWillUnmount(){
+        clearInterval(this.timer);
+    }
+
+    render() {
+        return (
+            <></>
+        )
+    }
+}
+
+export default About;
+
+5. Why do we use super(props) in constructor?
+-super() function is to call the constructor of the parent class. It is used we need to access few variables
+in the parent class.
+
+super() function is used to call parent constructor whereas super(props) would pass the props to the
+parent constructor.
+
+6.Why can't we have the callback function of useEffect async?
+- because react useEffect hook expects a cleanup function returned from it which is called when the 
+component unmounts. 
+Using an async function here will cause a bug as a cleanup function will never be called.
+
+
+

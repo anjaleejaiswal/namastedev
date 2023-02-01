@@ -1,0 +1,14 @@
+1. What is props drilling?
+ - If we have data in parent and want to pass data in great granchildren then we have to pass parent->
+ children-> grandchildren-> great grandchildren.
+
+ 2. What is lifting the state up?
+ -When we want single parent element which control all the child elemnt, then we should initialize
+ state in the parent compoent.
+
+ 3. What is context provider and context consumer? 
+ - Context Provider - is a component which is used change default values of global context.
+ context consumer - is alos a component which is get all the values which is passed in context provider.
+
+ 4. If you don't pass a value to the provider does it takes the default value ? 
+ - Yes it will take the default value of global context.

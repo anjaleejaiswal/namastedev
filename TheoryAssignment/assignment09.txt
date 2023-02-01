@@ -1,0 +1,53 @@
+1. When and why do we need lazy()? 
+- We use lazy loading only when large file size in our app. 
+If our app size is bigger and if we load all the data at the same time it will slow down the performance 
+of the app and soemtimes our crashes too.
+To overcome this issue we use lazy loading means we will load only that things which is needed at the time.
+
+2. What is suspense?
+- when we are loading component on demand react suspense this.
+Suspense component allow us to show some fallback content(loader/ shimmer UI) while we're waiting 
+for the lazy component to load or the component is not yet rendered.
+
+import React, {Suspense, lazy} from "react";
+import Shimmer from './Shimmer';
+
+const About = lazy(()=> import('./About'));
+
+const Applayout = () => {
+    return (
+        <>
+            <Suspense fallback={<Shimmer />}>
+                <About />
+            </Suspense>
+        </>
+    )
+}
+
+3. Why we got this error : A component suspended while responding to synchronous input. This will
+cause the UI to be replaced with a loading indicator.To fix, update the suspend should be wrapped with 
+startTarnsition? How does suspense fix this error?
+
+This error is thrown as exception by React when the promise to dynamically import the lazy component is not yet
+resolved and the component is expected to render in the meantime. If only the dynamic import is done and
+there is no <Suspense /> component then this error is shown. React expects a suspense boundaryto be in place
+for showing the fallbackprop until the promise is getting resolved.
+If showing the  shimmer is not desirable in some situation, then startTransitions API can be used to show the
+old UI while new UI is being prepared. React do this without having to delete or remove the suspense component
+or its props from your code.
+
+4. Advantages and disadvantages of using this code splitting pattern?
+- Advantages;
+a. Redues the page load time by bundling the large codes into smaller bundles and loading dynamically only 
+when component is loaded.
+b. Initial page load time also improved.
+c.Improves user experience during loaded by showing showing fallback UI using Suspense component.
+
+disadvantages:
+a. though initila load time is reduced but it increase load time each component when it loaded dynamically.
+b. many http request when component is loaded dynamically.
+
+5. When do we and why do we need suspense?
+-Suspense component allow us to show some fallback content(loader/ shimmer UI) while we're waiting 
+for the lazy component to load or the component is not yet rendered.
+

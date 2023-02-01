@@ -1,0 +1,59 @@
+1. Is JSX mandatory for React?
+JSX is not mandatory for React.
+We can even use React.createElement.
+In background Babel use to convert JSX into React.createElement only.
+But JSX makes it easier to write code for developing web applications.
+
+
+2. Is ES6 mandatory for React?
+No it is not mandatory.
+
+3. {TitleComponent} vs <TitleComponent /> vs <TitleComponent></TitleComponent> in JSX?
+{TitleComponent} - TitleComponent as a javascript expression or a variable. The {} can embed a 
+javascript expression or a variable inside it.
+<TitleComponent /> - represent a component returning some JSX value.
+                    In simple word TitleComponent is a function returning some JSX value.
+                    Component is written inside the < /> expression.
+<TitleComponent><TitleComponent /> - <TitleComponent><TitleComponent /> and <TitleComponent /> are 
+                                    equivalent only whereas  <TitleComponent /> has no child component 
+                                    and  <TitleComponent><TitleComponent />  created to include the
+                                    child component.
+
+4. How can I write comments in JSX?
+ -- multiple line         {/* */}
+ --single line            {//}
+
+5. What is <React.Fragment><React.Fragment/> and <></>?
+React.Fragment is a react library and its like a empty tag and we can't apply css for this.
+
+6. What is Virtual DOM?
+It is the represntation of actual DOM.
+
+7. What is reconcillation in React?
+reconcillation uses Diff algo to find out the difference b/w the trees(actual DOM and Virtual DOM).
+When it find out the difference. It re-render the only portion which is updated.
+
+8. Why we need keys in React? When do we need keys in React?
+Let's suppose if we have 4 div (a,b,c,d) and later on we have added one more div (e,a,b,c,d)
+so react doesn't know the order they were actually present. So it will re-render everything.
+If we add key which makes it unique so React will get to know about "e" div came up later and
+it will re-render only that one which is required.
+
+9. Can we use index as keys in React?
+Yes we can use index but React uses keys attribute to track the changes in the list.
+
+We might face following issues when we use index as key attribute when creating a list:
+
+Perfomance issue due to unecessary re-renders.
+Issue in data mapping in case list items are sorted, filtered or deleted.
+
+10. What is props in React?Ways to
+Props is properties.
+React props are like function argument in js and attributes in
+HTML.
+
+11.What is config driven UI?
+different data for different user.
+
+
+

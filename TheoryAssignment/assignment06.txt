@@ -1,0 +1,181 @@
+1. What is microservice ?
+- Microservice is also known as microservice architecture - is an architectural and organizational 
+approach of software development where software is composed of small independent services like database,
+server or UI of the application, that communicate over well defined APIs. 
+
+These services are owned by small, self contained teams. Microservices architecture makes application 
+easier to scale and faster to develop, enabling innovation and accelerating time-to-market for new 
+features. Means we are dividing software into small, well defined modules enables teams to use functions
+for multiple purposes.
+
+Benefit of microservies:
+    -flexible scaling
+    -easy deployment
+    -technological freedom
+    -reusable code
+    -resilience
+
+2. What is monolithic architecture?
+- A monolithic architecture is a traditional model of a software program, where services are tightly coupled
+with each other and run as a single service and hence difficult to scaled when more demands comes in picture.
+
+In case spike in demand, entire architure needs to be spiked and so features becomes  more complex and
+difficult to manage.
+
+3. Difference between monolithic and microservice?
+
+
+monolithic
+
+microservices
+
+Language
+
+Every services can be indepnedently developed using different programming languages.
+
+Completely developed in a single programming languages.
+	
+
+Codebase
+
+It has multiple codebase. Every services has a separate codebase for them.
+
+It has only a single codebase.
+
+Understandibility
+
+It has high understandibilty and easy to maintain.
+
+It is very difficult to understand and quite confusing.
+	
+
+Application scaling
+
+Application scaling is very easy as each services is scaled separately without scaling of the entire application.
+
+Application scaling is very difficult as entire application should be scaled.
+
+Development and deployment
+
+Continuous development and deployment are possible.
+
+Continuous development and deployment are complicated.
+
+4. why do we need useeffect hook?
+- useeffect hook eliminate the side effect caused by class based component.
+For example : task like updating the DOM, fetching data from API, timers etc. can lead to unwarranted side effects.
+
+5. What is optional chaining?
+ - Optional chaining operator accessed the object or function and if the object accessed or function is
+ undefined or null, it returns undefined instead of throwing the error.
+
+ 6. What is shimmer UI?
+ - Shimmer UI resembles the actual UI , so user understand how quickly the web or mobile app loads even 
+ before the content has shown up. It gives people an idea of what's about to come ot what happening(it's current
+ loading ) when a full page/data takes more than 3-5 to load.
+
+ 7. Difference between JS exprerssion and JS statement?
+ - Expression is a valid unit of code that resolves to a value.
+ Statement is a unit of code that performs an action.
+
+ //statement
+ let x = 0;
+ function add(a+b) {return a+b};
+ 
+
+ //Expression
+ x //0
+ 1+2 //3
+
+ 8. What is conditional rendering, explain with code example
+ - Conditional rendering decribe the ability to render different UI markup if a condition is 
+    true or false.
+
+    //code
+    import Body from "./component/Body";
+    import Shimmer from "./component/Shimmer";
+
+    const AppLayout => () = {
+        return(
+            {isLoading ? <Shimmer /> : <Body />}
+        )
+    }
+    
+ 9. What is CORS?
+ CORS - Cross Origin Resource Sharing CORS enables us to share resources from different origins. 
+ The steps are:
+    - Client sends Preflight request
+    - Servers verifies Preflight Request 
+    - Client sends Main request 
+    - Server Provides the requested resources crossorigin attribute has these values - anonymous(default), use-credentials.
+
+10. What is async and await?
+- async means asynchoronus. It allows a program to run a function without freezing the entire program.
+This is done using async/await keyword.
+
+async/await makes it easier to write promises. The word 'async' before function makes the function 
+return promise, always. 
+
+And the keyword await is used inside async functions, which makes the program wait until the 
+promise resolves.
+
+//code
+const movies = [
+        { title: `A New Hope`, body:`After Princess Leia, the leader of the Rebel Alliance, is held hostage by Darth Vader, Luke and Han Solo must free her and destroy the powerful weapon created by the Galactic Empire.`},
+        { title: `The Empire Strikes Back`, body: `Darth Vader is adamant about turning Luke Skywalker to the dark side. Master Yoda trains Luke to become a Jedi Knight while his friends try to fend off the Imperial fleet.` }
+    ]
+
+function getMovies(){
+    setTimeout(() => {
+        movies.forEach((movie, index) => {
+            console.log(movie.title)
+        })
+    }, 1000);
+}
+
+
+function createMovies(movie){
+    return new Promise((resolve, reject) => {
+        setTimeout(() => {
+            movies.push(movie);
+
+            const error = false;
+
+            if(!error){
+                resolve();
+            }
+            else{
+                reject('Error: Something went wrong!')
+            }
+        }, 2000);
+    })
+}
+
+async function init(){
+    await createMovies({ title: `Return of the Jedi`, body:`Luke Skywalker attempts to bring his father back to the light side of the Force. At the same time, the rebels hatch a plan to destroy the second Death Star.`});
+    
+    getMovies(); (*)
+}
+
+init();
+
+11. What is the use of 'const json = await data.json();' in getRestaurant()?
+- We get the json version of the data. Again we will await so that we can wait for it to complete or fail 
+and then pass the result to json variable.
+
+
+
+
+
+
+
+
+
+	
+	
+	
+	
+	
+	
+	
+
