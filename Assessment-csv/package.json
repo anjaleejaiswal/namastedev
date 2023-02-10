@@ -1,0 +1,30 @@
+{
+  "name": "csv-parse",
+  "version": "1.0.0",
+  "description": "",
+  "main": "App.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "parcel index.html",
+    "build": "parcel build index.html"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "parcel": "^2.8.3",
+    "parcel-transformer-csv": "^0.0.3",
+    "postcss": "^8.4.21",
+    "tailwindcss": "^3.2.6"
+  },
+  "dependencies": {
+    "@emotion/react": "^11.10.5",
+    "@emotion/styled": "^11.10.5",
+    "@mui/material": "^5.11.8",
+    "jspdf": "^2.5.1",
+    "jspdf-autotable": "^3.5.28",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-papaparse": "^4.1.0"
+  }
+}
